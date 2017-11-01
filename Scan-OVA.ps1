@@ -1,43 +1,43 @@
 function Scan-OVA {    
-    <#
-    .SYNOPSIS
-        This script is used to scan uncompressed OVA/OVF file(s) against the included manifest (SHA1 or SHA256).
+<#
+.SYNOPSIS
+    This script is used to scan uncompressed OVA/OVF file(s) against the included manifest (SHA1 or SHA256).
 
-    .DESCRIPTION
-        This script is used to scan uncompressed OVA/OVF file(s) against the included manifest (SHA1 or SHA256).  
+.DESCRIPTION
+    This script is used to scan uncompressed OVA/OVF file(s) against the included manifest (SHA1 or SHA256).  
         
-    .EXAMPLE
-        Scan-OVA -Path "\\Share\Foo\Bar.ova", "\\Share\NewFoo\NewBar.ovf"
-        Scans [\\Share\Foo\Bar.ova] and [\\Share\NewFoo\NewBar.ovf] against their respective .MF and .VMDK file(s).
+.EXAMPLE
+    Scan-OVA -Path "\\Share\Foo\Bar.ova", "\\Share\NewFoo\NewBar.ovf"
+    Scans [\\Share\Foo\Bar.ova] and [\\Share\NewFoo\NewBar.ovf] against their respective .MF and .VMDK file(s).
     
-    .EXAMPLE
-        Scan-OVA
-        Opens Windows File Explorer for file selection. Scans selected OVA/OVF file(s) against their respective .MF and .VMDK file(s).
+.EXAMPLE
+    Scan-OVA
+    Opens Windows File Explorer for file selection. Scans selected OVA/OVF file(s) against their respective .MF and .VMDK file(s).
 
-    .NOTES
-        Written By: Motonuke
-        Date: 2017-Aug-11
+.NOTES
+    Author: Motonuke
+    Date: 2017-Aug-11
 
-        Edited by: JBear
-        Date: 2017-Oct-19
-    #>
+    Edit: JBear
+    Date: 2017-Oct-19
+#>
 
-    param (
+param (
 
-        [Parameter(ValueFromPipeline=$true,HelpMessage="Enter OVA/OVF path(s)")]
-        [String[]]$Path = $null,
+    [Parameter(ValueFromPipeline=$true,HelpMessage="Enter OVA/OVF path(s)")]
+    [String[]]$Path = $null,
+)
 
-        #Write-Progress starting values
-        $i = 0,
-        $j = 0,
-        $k = 0,
-        $l = 0
-    )
+    #Write-Progress starting values
+    $i = 0,    
+    $j = 0,    
+    $k = 0,    
+    $l = 0
 
     #PS Version check
     if($PSVersionTable.PSVersion.major -lt 4) {
 
-        Write-Host -ForegroundColor Red "`nRequires Powershell version 4.0 or higher, please update the installed version.`n" 
+        Write-Host -ForegroundColor Red "`nRequires Powershell version 4.0 or higher.`n" 
         Break
     }
 
@@ -146,8 +146,8 @@ function Scan-OVA {
                 else {
 
                     "Fail"
-		        }
-	        }
+		}
+	    }
 
             #File test failed
             else {
