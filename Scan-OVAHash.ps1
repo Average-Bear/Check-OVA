@@ -1,4 +1,4 @@
-function Scan-OVA {    
+function Scan-OVAHash {    
 <#
 .SYNOPSIS
     This script is used to scan uncompressed OVA/OVF file(s) against the included manifest (SHA1 or SHA256).
