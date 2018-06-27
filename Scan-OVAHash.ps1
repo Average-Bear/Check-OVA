@@ -25,7 +25,7 @@ function Scan-OVAHash {
 param (
 
     [Parameter(ValueFromPipeline=$true,HelpMessage="Enter OVA/OVF path(s)")]
-    [String[]]$Path = $null,
+    [String[]]$Path = $null
 )
 
     #Write-Progress starting values
