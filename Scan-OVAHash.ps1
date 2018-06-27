@@ -29,9 +29,9 @@ param (
 )
 
     #Write-Progress starting values
-    $i = 0,    
-    $j = 0,    
-    $k = 0,    
+    $i = 0    
+    $j = 0    
+    $k = 0    
     $l = 0
 
     #PS Version check
